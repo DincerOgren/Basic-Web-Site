@@ -1,0 +1,505 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+	
+<link rel="stylesheet" href="hstyle.css" />
+</head>
+<body>
+    
+ 
+    <div class="hepsi">
+    <div class="menu">
+<ul>
+<li id="hakkimda"><a href="">Hakkimda</a></li>
+<li id="sehir"><a href="index-s.html">Şehrim</a></li>
+<li id="miras"><a href="index-m.html">Mirasımız</a></li>
+<li id="home"><a href="index-i.html">İletişim</a></li>
+<li id="login"><a href="index-l.html">Login</a></li>
+</ul>
+</div>
+        <div class="orta">
+    <div class="hakkimdakutu">
+        <span class="yazi1"> <h1>HOŞGELDİNİZ</h1></span><br>
+        
+        Ben deniz Emre Dinçer Öğren.Çoğunlukla Emre ismimi kullanmam o yüzden Dinçer olarak devam edelim.<br/>
+        29 Haziran 2001 yılında doğdum.Şu anda Sakarya Üniversitesi Bilgisayar Mühendisliği bölümünde 1.sınıfım. İleride büyük bir oyun firmasında çalışmak istiyorum.
+        
+        </div>
+        
+        <div class="orta1">
+            
+            Boş zamanlarımda genellikle bilgsayar oyunları oynar. Kitap okurum.
+            Onun dışında hobilerimle uğraşmayı severim.<br/><br/>
+            <span class="yazi2">İşte Bazi Hobilerim =></span>
+            </div>    
+            <div class="orta2">
+                <table  width="420px">
+                    <tr><td>Futbol Oynamak</td> <td><span class="g">ŞAMPİYON</span> <span class="s">GALATASARAY</span></td><br/>
+                <tr><td>Doğa Yürüşü Yapmak</td><td><img src="images/hiking.jpg" width="300px"></td></tr>
+                     <tr height="70px"><td>Müzik Dinlemek</td><td><span class="yazi3">Favorim: Sezen Aksu - Gidemem</span></td></tr>
+                     <tr height="40px"><td colspan="2"><span class="yazi4">Arkadaşlarımla Eğlenmek</span></td></tr>
+                
+            
+            </table>
+            </div>
+        
+       
+        </div>
+        
+        
+        
+        
+    </div>
+    
+</body>
+
+
+</html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>JavaScript 41</title>
+<style type="text/css">
+input:focus,select:focus{ outline:none}
+
+
+
+body{ font:12px tahoma}
+.form1{ width:610px; height:450px; margin:60px auto; background:url(images/formarka.jpg) no-repeat; padding:100px 0 0 40px}
+td{ height:30px}
+#dugme{ width:120px; height:30px; border:2px solid #9d3a56; background:#933; border-radius:3px; color:#fff; font-weight:bold}
+#dugme:hover{ border-color:#9b4562; background:#72273c}
+#ad,#soyad,#kadi,#parola,#mail,#girilenkod{ width:175px; height:25px; border:1px solid #bbb; color:#ababab; background:#fff; border-radius:3px; padding:0 0 0 2px}
+#gun,#ay{ width:50px; height:25px; color:#000; border:1px solid #999; background:#FFF; border-radius:3px;}
+#yil,#dyeri{ width:100px; height:25px; color:#000; border:1px solid #999; background:#FFF;border-radius:3px;}
+#uretilenkod{ width:135px; height:56px; background:url(images/guvenlik.jpg) no-repeat; font:bold 30px tahoma; color:#fff; text-align:center; border:none;
+ text-shadow:0 1px 1px #000}
+span{color:#b00; font:11px tahoma}
+</style>
+<script type="text/javascript">
+function koduret()
+{
+	var kodlar="";
+  for(var i=1;i<=6;i++)
+  {
+	  if(Math.round(Math.random())==1)
+	  {kodlar=kodlar+String.fromCharCode(65+25*Math.random());}
+	  else
+	  {kodlar=kodlar+String.fromCharCode(48+9*Math.random());}
+  }
+	 document.getElementById("uretilenkod").value=kodlar;
+	
+	
+	
+}
+
+function odaklan(x)
+{
+if(x=="ad" || x=="soyad" || x=="kadi" || x=="mail" || x=="girilenkod")	
+{
+	document.getElementById(x).value="";
+	document.getElementById(x).style.background="#fff7db";
+	document.getElementById(x).style.color="#000";
+	document.getElementById(x).style.borderColor="#000";
+}	
+}
+
+function cikis(x,y)
+{
+	if(y=="")
+	{
+		if(x=="ad")
+		{ document.getElementById(x).value="Adınızı yazınız";}
+		if(x=="soyad")
+		{ document.getElementById(x).value="Soyadınızı yazınız";}
+		if(x=="kadi")
+		{ document.getElementById(x).value="Kullanıcı adını yazınız";}
+		if(x=="mail")
+		{ document.getElementById(x).value="E-Mail giriniz";}
+		if(x=="girilenkod")
+		{ document.getElementById(x).value="Güvenlik kodunu giriniz";}
+		
+		document.getElementById(x).style.background="#fff";
+		document.getElementById(x).style.color="#ababab";
+	    document.getElementById(x).style.borderColor="#bbb";
+		
+	}
+	else
+	{
+		document.getElementById(x).style.background="#fff";
+		document.getElementById(x).style.color="#000";
+	    document.getElementById(x).style.borderColor="#bbb";
+		
+	}
+}
+
+function islem()
+{   document.getElementById("aduyari").innerHTML="";
+    document.getElementById("soyaduyari").innerHTML="";
+    document.getElementById("kadiuyari").innerHTML="";
+	document.getElementById("mailuyari").innerHTML="";
+	document.getElementById("parolauyari").innerHTML="";
+	document.getElementById("guvenlikuyari").innerHTML="";
+    var kural, yazi;
+	yazi=document.getElementById("mail").value;
+	kural=/.+@.+\.+./;
+	
+	if(document.getElementById("ad").value=="Adınızı yazınız")
+	{document.getElementById("aduyari").innerHTML="Adınızı yazmadınız!";}
+	if(document.getElementById("soyad").value=="Soyadınızı yazınız")
+	{document.getElementById("soyaduyari").innerHTML="Soyadınızı yazmadınız!";}
+	if(document.getElementById("kadi").value=="Kullanıcı adını yazınız")
+	{document.getElementById("kadiuyari").innerHTML="Kullanıcı adını yazmadınız!";}
+	if(document.getElementById("parola").value=="")
+	{document.getElementById("parolauyari").innerHTML="Şifrenizi yazmadınız!";}
+	if(document.getElementById("mail").value=="E-Mail giriniz")
+	{document.getElementById("mailuyari").innerHTML="Mailinizi yazmadınız!";}
+	else if(!kural.test(yazi))
+	{document.getElementById("mailuyari").innerHTML="Geçersiz Mail!!"}
+	if(document.getElementById("girilenkod").value=="Güvenlik kodunu giriniz")
+	{document.getElementById("guvenlikuyari").innerHTML="Güvenlik kodunu yazmadınız!";}
+	else if(document.getElementById("uretilenkod").value!=document.getElementById("girilenkod").value)
+	{document.getElementById("guvenlikuyari").innerHTML="Güvenlik kodu yanlış";}
+}
+</script>
+</head>
+<body onload="koduret()">
+<div class="form1">
+<form action="" method="get">
+<table width="630" border="0">
+  <tr>
+    <td width="180">Adı:</td>
+    <td width="270"><input name="" id="ad" value="Adınızı yazınız" onfocus="odaklan(this.id)" onblur="cikis(this.id,this.value)" type="text" /></td>
+    <td width="180"><span id="aduyari"></span></td>
+  </tr>
+  <tr>
+    <td>Soyadı:</td>
+    <td><input name="" id="soyad" value="Soyadınızı yazınız" onfocus="odaklan(this.id)" onblur="cikis(this.id,this.value)" type="text" /></td>
+    <td><span id="soyaduyari"></span></td>
+  </tr>
+  <tr>
+    <td>Kullanıcı Adı:</td>
+    <td><input name="" id="kadi" value="Kullanıcı adını yazınız" onfocus="odaklan(this.id)" onblur="cikis(this.id,this.value)" type="text" /></td>
+    <td><span id="kadiuyari"></span></td>
+  </tr>
+  <tr>
+    <td>Parola:</td>
+    <td><input name="" id="parola" type="password" /></td>
+    <td><span id="parolauyari"></span></td>
+  </tr>
+  <tr>
+    <td>E-Mail:</td>
+    <td><input name="" id="mail" value="E-Mail giriniz" onfocus="odaklan(this.id)" type="text" onblur="cikis(this.id,this.value)" /></td>
+    <td><span id="mailuyari"></span></td>
+  </tr>
+  <tr>
+    <td>Doğum Tarihi:</td>
+    <td><select name="" id="gun">
+      <option value="">Gün</option>
+      <option value="01">01</option>
+      <option value="02">02</option>
+      <option value="03">03</option>
+      <option value="04">04</option>
+      <option value="05">05</option>
+      &nbsp;</select> 
+      
+      <select name="" id="ay">
+        <option value="">Ay</option>
+        <option value="01">01</option>
+        <option value="02">02</option>
+        <option value="03">03</option>
+        <option value="04">04</option>
+        <option value="05">05</option>
+      </select> 
+      
+      <select name="" id="yil">
+        <option value="">Yıl</option>
+        <option value="1994">1994</option>
+        <option value="1995">1995</option>
+        <option value="1996">1996</option>
+        <option value="1998">1997</option>
+        <option value="1999">1999</option>
+      </select></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Doğum Yeri:</td>
+    <td><select name="" id="dyeri">
+      <option value="Bursa">Bursa</option>
+      <option value="İstanbul">İstanbul</option>
+      <option value="Ankara">Ankara</option>
+      <option value="İzmir">İzmir</option>
+    </select></td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Cinsiyet:</td>
+    <td><input name="cins" type="radio" id="cins1" value="" checked="checked"  /> Erkek <input name="cins" type="radio" id="cins2" value="" /> Kadın</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td>Hobiler:</td>
+    <td><input name="" type="checkbox" id="hobi1" value="" /> Spor <input name="" type="checkbox" id="hobi2" value="" /> Sinema 
+    <input name="" type="checkbox" value="" id="hobi3" /> Müzik <input name="" type="checkbox" value="" id="hobi4" /> Kitap</td>
+    <td>&nbsp;</td>
+  </tr>
+  <tr>
+    <td><input name="" type="text" id="uretilenkod" /></td>
+    <td><input name="" id="girilenkod" value="Güvenlik kodunu giriniz" onfocus="odaklan(this.id)" onblur="cikis(this.id,this.value)" type="text" /></td>
+    <td><span id="guvenlikuyari"></span></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td><input name="" id="dugme" type="button" value="Gönder" onclick="islem()" /></td>
+    <td><a href="index-h.html"><input name="" id="dugme" type="button" value="Ana Sayfa" /></a></td>
+  </tr>
+</table>
+
+
+
+</form>
+</div>
+</body>
+</html>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="./sstyle.css">
+    <title>Vanilla Carousel</title>
+</head>
+<body>
+
+    <div class="title">
+        <span class="header"><h1>KOCAELI</h1></span><
+    </div>
+
+    <div class="carousel-container">
+            <i class="fas fa-arrow-left" id="previousBtn"></i>
+            <i class="fas fa-arrow-right" id="nextBtn"></i>
+        <div class="carousel-slide">
+        <img src="resim5.jpg" id="lastClone" alt="">
+        <img src="resim1.jpg" alt="">
+        <img src="resim2.jpg" alt="">
+        <img src="resim3.jpg" alt="">
+        <img src="resim4.jpg" alt="">
+        <img src="resim5.jpg" alt="">
+        <img src="resim1.jpg" id="firstClone" alt="">
+    </div>
+</div>
+
+<div class="yazii">
+<span class="center">KOCAELİ GENEL BİLGİLER</span>
+    
+
+<br/>
+<br>
+<span >Yüzölçümü: 3.505 km²</span>
+<br/>
+<span >Nüfus: 1.830.772 (2016)</span>
+<br/>
+<span>İl Trafik No: 41</span>
+<br/><br/>
+ 
+     Kocaeli; Asya ve Avrupa’yı birbirine bağlayan yolların kavşağında bulunan Marmara Denizi’nin ve Marmara Bölgesi’nin doğusunda yer alan bir İl’dir.
+	 Kuzeyde Karadeniz, doğuda ve güneydoğuda Sakarya, güneyde Bursa batıda Yalova ve İstanbul illeri yer almaktadır. 1’i Büyükşehir Belediyesi ve İzmit,
+	 Derince, Körfez, Gebze, Gölcük, Karamürsel, Kandıra,  Başiskele, Kartepe, Çayırova, Darıca, Dilovası 12 İlçe Belediyesi olmak üzere toplam 13 Belediyesi
+	 bulunmaktadır.<br/><br/>
+
+    İlkçağlardan itibaren yerleşim için cazibe teşkil eden Kocaeli 1924 yılında vilayet olmuştur.
+	Türkiye’nin en küçük 6. il’i olan Kocaeli’nin yüzölçümü 3,505 km2’dir.  2011 yılı  Adrese Dayalı Nüfus Sayımına göre nüfusu 1.601.720 kişidir.
+	1.499.958 kişi il ve ilçe merkezlerine ikamet ederken 101.762 kişi köylerde yaşamaktadır. Kara, demir, deniz ve hava yolu  ulaşımları ile 
+	Türkiye’nin önemli geçiş noktalarından biridir.<br/><br/>
+
+    Kocaeli, gerek sanayi sektöründeki üretim ve katma değer , gerekse bu sektörde çalışan insan açısından sadece
+	Türkiye için değil dünya için de ilginç bir örnektir.Bünyesinde barındırdığı 400 adet 1. sınıf ve yaklaşık 7000 adet 2. ve 3. sınıf
+	Gayrı Sıhhi Müessesesi (GSM) ile bir Sanayi Kenti, İki Üniversitesi, TÜBİTAK – Marmara Araştırma Merkezi ve TÜSSİDE – Türkiye Sanayi Sevk ve İdare
+	Enstitüsü ile bir Bilim Kenti olan Kocaeli, kurulan ve kuruluş çalışmaları devam eden 16 adet OSB’ si ve 4 adet teknoparkı ile Ülke Sanayi’nin 
+	Başkenti konumunda olup, Teknokent vizyonuna doğru hızla ilerlemektedir. Türk imalat sanayi üretimine yapmış olduğu yaklaşık %13’ lük üretim katkısı ile 
+	İstanbul’dan sonra gelen en büyük ili konumundadır.<br/><br/>
+
+    Kocaeli İli, Karadeniz ve Marmara Denizi’ne olan kıyıları, İstanbul Metropolüne olan yakınlığı, 
+	tarihi eserleri, müzeleri, Mimar Sinan’ın eseri olan camileri, doğal güzellikleri, plajları, yaylaları, 
+	trekking parkurları, Sekaparkı, Kocaeli Fuarı, Uluslararası İnterteks Fuarı,  Kartepe kayak merkezi, Yuvacık Barajı,  
+	mesire alanları,  Sapanca Gölü, Darıca Faruk Yalçın Hayvanlar Alemi ve Botanik Bahçesi, Harikalar Sahili,  Alışveriş Merkezleri, 
+	kültür merkezleri, Olimpik buz pateni salonu, Gölkayparkı, alternatif turizm çeşitlerine  imkan sunan, nitelikli turizm tesisleri, sahillerinde bulunan 
+	balık lokantaları, dünyaca tanınan Hereke Halıları, kente özgü pişmaniyesi, Karamürsel sepeti, Kandıra Bezi,  Çenesuyu ve bir çok kültür ve turizm değerleri  
+	ile ticaret, sanayi, bilim, kültür, turizm ve sanat açısından ayrı bir öneme sahip Marka şehirdir</div>
+	
+    <script src="sjs.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+const carouselSlide = document.querySelector('.carousel-slide');
+const carouselImages = document.querySelectorAll('.carousel-slide img');
+//Buttons
+const previousBtn = document.querySelector('#previousBtn');
+const nextBtn = document.querySelector('#nextBtn');
+//Counter
+let counter = 1;
+const size = carouselImages[0].clientWidth;
+
+
+carouselSlide.style.transform = 'translateX(' + (-size*counter) + 'px)';
+
+nextBtn.addEventListener('click',()=>{
+    if(counter >= carouselImages.length - 1) return;
+    carouselSlide.style.transition = 'transform 0.2s ease-in-out';
+    counter++;
+    carouselSlide.style.transform = 'translateX(' + (-size*counter) + 'px)';
+});
+
+previousBtn.addEventListener('click',()=>{
+    if(counter <= 0) return;
+    carouselSlide.style.transition = 'transform 0.2s ease-in-out';
+    counter--;
+    carouselSlide.style.transform = 'translateX(' + (-size*counter) + 'px)';
+});
+
+
+carouselSlide.addEventListener('transitionend',()=>{
+    if(carouselImages[counter].id === 'lastClone'){
+        carouselSlide.style.transition = 'none';
+        counter = carouselImages.length -2;
+        carouselSlide.style.transform = 'translateX(' + (-size*counter) + 'px)';
+    }
+    if(carouselImages[counter].id === 'firstClone'){
+        carouselSlide.style.transition = 'none';
+        counter = carouselImages.length - counter;
+        carouselSlide.style.transform = 'translateX(' + (-size*counter) + 'px)';
+
+    }
+});
+
+console.log(carouselImages.length);
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{background:url(background.jpg)fixed;}
+
+.title{
+    height: 20vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font:19px tahoma #green;
+}
+
+.yazii{
+	width:1000px; 
+	height:auto;
+	border:2px solid #fff; 
+	margin:100px auto; 
+	float:clear;
+	font:19px tahoma;
+	line-height:30px;
+	color:#ffff99;
+    text-align: justify;
+	padding: 0 50px 0 50px;
+}
+.yazi span{ 
+    font:20px tahoma #ffff99;
+	line-height:25px;
+	color:#ffff99;
+}
+
+.header{
+    
+    font:50px Algerian;
+    color: aqua;
+    letter-spacing: 30px;
+}
+
+.center{
+	margin:0 0 0 270px;
+    font:bold 30px tahoma; 
+}
+
+.carousel-container{
+    width: 60%;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+.carousel-slide img{
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-slide{
+    display: flex;
+    width: 100%;
+    height: 500px;
+}
+#previousBtn{
+   position: absolute;
+   top: 50%;
+   z-index: 10;
+    left: 5%;
+    font-size: 30px;
+    color: white;
+    opacity: 0.5;
+    cursor: pointer;
+}
+#nextBtn{
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    right: 5%;
+    font-size: 30px;
+    color: white;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+
+body{background:);}
+
+.hepsi{ width:821px; height:auto; margin:20px auto; }
+
+.orta{ width:821px; height:730px; background:#e9e5e2; padding:30px 0 0 20px border:2px solid #c1f;}
+
+.menu{ width:821px; height:42px; margin:0 auto;  background:url(images/menu_bg.gif) }
+.menu ul{list-style: none;}
+.menu ul li{ float:left}
+.menu ul li a{ display:block; width:150px; height:30px; font:bold 12px Tahoma; color:#fff; text-decoration:none; text-align:center; padding:12px 0 0 0}
+.menu ul li#hakkimda a{background:url(images/menu_bullet.gif) center bottom  no-repeat}
+.menu ul li a:hover{background:url(images/menu_bullet.gif) center bottom no-repeat}
+
+
+.hakkimdakutu{ width: 420px;height: auto; float:left; margin:15px 0 0 180px; font:17px tahoma; color=#fff text-align: justify; line-height:25px; padding:0 0 0 13px}
+
+.yazi1{color:#ff6600; text-align: center;}
+
+.orta1 { width:280px; height:   80px; float: left; font:16px arial;
+    margin:40px 0 0 50px; text-align: justify; padding: 20px 20px 0 20px; line-height: 25px}
+
+.yazi2{ font:bold 24px tahoma; color:#24a4b7;}
+
+.orta2{width:420px; height:auto; border:2px solid #ffdf80; background: #b8b894; float:left; margin:80px 0 0 15px; font:14px tahoma;}
+
+.g{font:17px tahoma; color: crimson; margin: 0 0 0 50px}
+.s{font:17px tahoma; color: #ffff33; }
+
+.yazi3{ font:18px ariel; margin:0 0 0 20px}
+
+.yazi4{ margin:10px 0 0 100px; font:17px tahoma}
