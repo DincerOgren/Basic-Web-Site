@@ -1,1 +1,1 @@
-İlgili dosya ektedir.
+Basic website with HTML and Javascript.
